@@ -1,0 +1,28 @@
+{
+  "name": "node-microservice-example",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "debug": "DEBUG=node-microservice-example:* npm start",
+    "build": "babel src/ -d lib/",
+    "prepublish": "npm run build",
+    "flow": "flow",
+    "start:gateway": "npm run prepublish && node ./lib/gateway/bin/www.js",
+    "debug:gateway": "npm run prepublish && DEBUG=node-microservice-example:* npm run start:gateway"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-flow": "^7.0.0",
+    "flow-bin": "^0.106.3"
+  }
+}
