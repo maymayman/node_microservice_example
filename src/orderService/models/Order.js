@@ -2,11 +2,11 @@
 
 const Sequelize = require('Sequelize');
 module.exports = (sequelize) => {
-  const User = sequelize.define('Order', {
+  const model = sequelize.define('Orders', {
     id: { type: Sequelize.BIGINT, primaryKey: true, autoIncrement: true },
     userId: { type: Sequelize.BIGINT },
     status: { type: Sequelize.ENUM, values: ['created', 'confirmed', 'delivered', 'cancelled'] },
   });
 
-  return User;
+  return model;
 };

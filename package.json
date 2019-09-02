@@ -7,19 +7,24 @@
     "debug": "DEBUG=node-microservice-example:* npm start",
     "start:order-service": "nodemon ./src/orderService/bin/www",
     "debug:order-service": "DEBUG=node-microservice-example:* npm run start:order-service",
+    "start:payment-service": "nodemon ./src/paymentService/bin/www",
+    "debug:payment-service": "DEBUG=node-microservice-example:* npm run start:payment-service",
     "eslint": "eslint src/**"
   },
   "dependencies": {
+    "@hapi/joi": "15.1.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "sequelize": "5.17.2",
+    "mysql2": "^1.7.0",
+    "node-schedule": "^1.3.2",
     "passport-jwt": "4.0.0",
-    "@hapi/joi": "15.1.1",
-    "mysql2": "^1.7.0"
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "sequelize": "5.17.2"
   },
   "devDependencies": {
     "eslint": "^6.3.0",
