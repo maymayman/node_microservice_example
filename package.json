@@ -5,11 +5,9 @@
   "scripts": {
     "start": "node ./bin/www",
     "debug": "DEBUG=node-microservice-example:* npm start",
-    "build": "babel src/ -d lib/",
-    "prepublish": "npm run build",
-    "flow": "flow",
-    "start:gateway": "npm run prepublish && node ./lib/gateway/bin/www.js",
-    "debug:gateway": "npm run prepublish && DEBUG=node-microservice-example:* npm run start:gateway"
+    "start:order-service": "nodemon ./src/orderService/bin/www",
+    "debug:order-service": "DEBUG=node-microservice-example:* npm run start:order-service",
+    "eslint": "eslint src/**"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -17,12 +15,14 @@
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "sequelize": "5.17.2",
+    "passport-jwt": "4.0.0",
+    "@hapi/joi": "15.1.1",
+    "mysql2": "^1.7.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/preset-flow": "^7.0.0",
-    "flow-bin": "^0.106.3"
+    "eslint": "^6.3.0",
+    "nodemon": "1.19.1"
   }
 }
