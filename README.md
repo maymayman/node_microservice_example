@@ -1,29 +1,29 @@
-### node_microservice_example
+# node_microservice_example
 
-### Install Nodejs
+# Install Nodejs
 https://nodejs.org/en/download/
 
-### Install mysql via docker
+# Install mysql via docker
 
 ## Install Docker
 Install Docker: https://docs.docker.com/install/
 
 ## Install MySql 5.7.27 (library mysql2 has problem with MySql 7.x)
 
-# Pull MySQL via DockerHub:
+### Pull MySQL via DockerHub:
 docker pull mysql
 
-# Starting a MySQL instance is simple:
+### Starting a MySQL instance is simple:
 docker run -p 3307:3306 --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:5.7.27
 
 
-### Start Order App
+# Start Order App
 npm run start:order-service
 
-### Start Payment App
+# Start Payment App
 npm run start:payment-service
 
-### create teables 'orders' and 'payments'
+# create teables 'orders' and 'payments'
 
 CREATE TABLE IF NOT EXISTS Orders (
     id BIGINT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS Payments (
     FOREIGN KEY (orderId) REFERENCES Orders(id)
 )
 
-### Create order example 
+# Create order example 
 POST /orders HTTP/1.1
 Host: localhost:3000
 Content-Type: application/json
